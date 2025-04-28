@@ -1,0 +1,758 @@
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  overflow:visible;
+  z-index: -1;
+  opacity: 0.8;
+}
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none; /* Allow clicks through video */
+}
+
+/* Global Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url('images/bg6.jpg') center/cover no-repeat fixed;
+  position: relative;
+  z-index: 0;
+}
+
+/* Main Content Container */
+.container {
+  position: fixed;
+  top: 10%; /* <-- add this */
+  left: 35%;
+  z-index: 2;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+/* Gift Box */
+.gift-box {
+  position: relative;
+  width: 200px;
+  margin: 20px auto;
+  cursor: pointer;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 15px;
+
+}
+
+.gift-box img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+/* Love Letter */
+.love-letter {
+  position: fixed;
+  top :10%;
+  background: url('images/bg9.jpg') center/cover no-repeat; /* <-- Add background inside letter */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  max-width: 400px;
+  margin: 20px auto;
+  opacity: 0;
+  transform: translateY(0px); /* Move higher */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  color: #2c2c2c; /* Dark text for better readability */
+  font-size: 1.3rem;
+  line-height: 1.7;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  overflow: hidden;
+}
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  background-color: #ff6b81;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#musicBtn:hover {
+  background-color: #ff4d6d;
+  transform: scale(1.1);
+}
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  overflow:visible;
+  z-index: -1;
+  opacity: 0.8;
+}
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none; /* Allow clicks through video */
+}
+
+/* Global Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url('images/bg6.jpg') center/cover no-repeat fixed;
+  position: relative;
+  z-index: 0;
+}
+
+/* Main Content Container */
+.container {
+  position: fixed;
+  top: 10%; /* <-- add this */
+  left: 35%;
+  z-index: 2;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+/* Gift Box */
+.gift-box {
+  position: relative;
+  width: 200px;
+  margin: 20px auto;
+  cursor: pointer;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 15px;
+
+}
+
+.gift-box img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+/* Love Letter */
+.love-letter {
+  position: fixed;
+  top :10%;
+  background: url('images/bg9.jpg') center/cover no-repeat; /* <-- Add background inside letter */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  max-width: 400px;
+  margin: 20px auto;
+  opacity: 0;
+  transform: translateY(0px); /* Move higher */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  color: #2c2c2c; /* Dark text for better readability */
+  font-size: 1.3rem;
+  line-height: 1.7;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  overflow: hidden;
+}
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  background-color: #ff6b81;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#musicBtn:hover {
+  background-color: #ff4d6d;
+  transform: scale(1.1);
+}
+
+/* Optional: Style for p inside love-letter 
+.love-letter p {
+  background: rgba(255, 255, 255, 0.7); /* Soft white background behind each paragraph 
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}*/
+
+/* Buttons */
+button {
+  position: fixed;
+  top:85%;
+  left:45%;
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #c9184a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.6s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+button:hover {
+  background-color: #a3123f;
+  transform: translateY(-2px);
+}
+
+/* Heart Animation */
+.heart {
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+@keyframes heartBeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+}
+.heart::before,
+.heart::after {
+  content: '';
+  background-color: #ff69b4;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+.heart::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0;
+  z-index: 2;
+}
+.heart::after {
+  width: 50px;
+  height: 50px;
+  left: 25px;
+  top: 0;
+  z-index: 2;
+  
+}
+
+/* Gift Open Animation */
+@keyframes giftOpen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+  
+}
+.gift-box img:hover {
+  animation: giftOpen 0.4s ease forwards;
+}
+.photo-side {
+  position: fixed;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2;
+}
+
+.photo-side img {
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+
+}
+
+.photo-side img:hover {
+  transform: scale(3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: scroll ;
+  border-radius: 12px;
+  position: relative;
+  
+}
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  overflow:visible;
+  z-index: -1;
+  opacity: 0.8;
+}
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none; /* Allow clicks through video */
+}
+
+/* Global Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url('images/bg6.jpg') center/cover no-repeat fixed;
+  position: relative;
+  z-index: 0;
+}
+
+/* Main Content Container */
+.container {
+  position: fixed;
+  top: 10%; /* <-- add this */
+  left: 35%;
+  z-index: 2;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+/* Gift Box */
+.gift-box {
+  position: relative;
+  width: 200px;
+  margin: 20px auto;
+  cursor: pointer;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 15px;
+
+}
+
+.gift-box img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+/* Love Letter */
+.love-letter {
+  position: fixed;
+  top :10%;
+  background: url('images/bg9.jpg') center/cover no-repeat; /* <-- Add background inside letter */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  max-width: 400px;
+  margin: 20px auto;
+  opacity: 0;
+  transform: translateY(0px); /* Move higher */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  color: #2c2c2c; /* Dark text for better readability */
+  font-size: 1.3rem;
+  line-height: 1.7;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  overflow: hidden;
+}
+#musicBtn {
+  position: fixed;
+  bottom: 5%;
+  left: 32%;
+  z-index: 5;
+  background-color: #ff6b81;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#musicBtn:hover {
+  background-color: #ff4d6d;
+  transform: scale(1.1);
+}
+.playing {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Optional: Style for p inside love-letter 
+.love-letter p {
+  background: rgba(255, 255, 255, 0.7); /* Soft white background behind each paragraph 
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}*/
+
+/* Buttons */
+button {
+  position: fixed;
+  top:85%;
+  left:45%;
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #c9184a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.6s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+button:hover {
+  background-color: #a3123f;
+  transform: translateY(-2px);
+}
+
+/* Heart Animation */
+.heart {
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+@keyframes heartBeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+}
+.heart::before,
+.heart::after {
+  content: '';
+  background-color: #ff69b4;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+.heart::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0;
+  z-index: 2;
+}
+.heart::after {
+  width: 50px;
+  height: 50px;
+  left: 25px;
+  top: 0;
+  z-index: 2;
+  
+}
+
+/* Gift Open Animation */
+@keyframes giftOpen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+  
+}
+.gift-box img:hover {
+  animation: giftOpen 0.4s ease forwards;
+}
+.photo-side {
+  position: fixed;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2;
+}
+
+.photo-side img {
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+
+}
+
+.photo-side img:hover {
+  transform: scale(3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: scroll ;
+  border-radius: 12px;
+  position: relative;
+  
+}
+
+
+
+/* Optional: Style for p inside love-letter 
+.love-letter p {
+  background: rgba(255, 255, 255, 0.7); /* Soft white background behind each paragraph 
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}*/
+
+/* Buttons */
+button {
+  position: fixed;
+  top:85%;
+  left:45%;
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #c9184a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.6s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+button:hover {
+  background-color: #a3123f;
+  transform: translateY(-2px);
+}
+
+/* Heart Animation */
+.heart {
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+@keyframes heartBeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+}
+.heart::before,
+.heart::after {
+  content: '';
+  background-color: #ff69b4;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  animation: heartBeat 1s infinite;
+  z-index: 2;
+}
+.heart::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0;
+  z-index: 2;
+}
+.heart::after {
+  width: 50px;
+  height: 50px;
+  left: 25px;
+  top: 0;
+  z-index: 2;
+  
+}
+
+/* Gift Open Animation */
+@keyframes giftOpen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+  
+}
+.gift-box img:hover {
+  animation: giftOpen 0.4s ease forwards;
+}
+.photo-side {
+  position: fixed;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2;
+}
+
+.photo-side img {
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+
+}
+
+.photo-side img:hover {
+  transform: scale(3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: scroll ;
+  border-radius: 12px;
+  position: relative;
+  
+}
+

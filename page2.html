@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise - Page 2</title>
+  <link rel="stylesheet" href="style2.css"/>
+</head>
+<body>
+  <div class="welcome-container" id="welcomeSection">
+    <h1 class="sparkle-text">Happiest Birthday, My Love.. My lovely wife (Banni saa✨)</h1>
+    <button class="thank-button">Thank You</button>
+  
+  
+  <audio id="birthdaySong" autoplay loop>
+    <source src="music/happy-birthday.mp3" preload="auto"></audio>
+  <button id="playSongBtn">🎵 Play Birthday Song</button>
+  </div>
+
+  <div class="background-photos">
+    <img src="images/img1.jpg" class="bg-photo" />
+    <img src="images/img6.jpg" class="bg-photo" />
+    <img src="images/img5.jpg" class="bg-photo" />
+    <img src="images/img7.jpg" class="bg-photo" />
+  </div>
+
+  <div class="container" id="cake-container" style="display: none;">
+    <h1>Time to cut the cake!</h1>
+    <p>Click the knife to cut the cake!</p>
+
+    <div class="cake-area">
+      <img src="images/cake.png" alt="Birthday Cake" id="cake" />
+      <img src="images/cut-cake.png" id="cuttedCake" alt="Cutted Cake" style="display: none;">
+      <img src="images/knife.png" alt="Knife" id="knife" />
+      <div class="celebration-text" id="celebrationText">🎉 Woohoo! Happy Birthday! 🎂</div>
+      <div class="fireworks" id="fireworks" style="display: none;"></div>
+      <canvas id="confettiCanvas"></canvas>
+      <div class="confetti" id="confetti" style="display: none;"></div>
+    </div>
+
+    <button id="nextBtn" style="display: none;">Gift</button>
+  </div>
+
+ 
+
+  <script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  background:url('images/bg8.jpg') center/cover no-repeat fixed;
+  background-size: relative;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* A new wrapper to align everything nicely */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  z-index: 1;
+}
+.background-photos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow:scroll;
+  z-index: 2;
+}
+
+.bg-photo {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  opacity: 1;
+  animation: alternate 10s infinite ;
+  filter:brightness(1.1);
+  border-radius: 12px;
+}
+
+/* Optional: random placement using nth-child */
+.bg-photo:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.bg-photo:nth-child(2) { top: 10%; right: 5%; animation-delay: 0s; }
+.bg-photo:nth-child(3) { top: 40%; left: 20%; animation-delay: 0s; }
+.bg-photo:nth-child(4) { top: 40%;right: 20%; animation-delay: 0s; }
+
+/* Floating animation */
+@keyframes floatPhoto {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+
+}
+
+/* Welcome section */
+.welcome-container {
+  animation: fadeZoom 3s ease-in-out;
+  margin-bottom: 10px;
+  color: white;
+  max-width: 40vw;
+  top: 30%;
+  left: 30%;
+  position: relative;
+  z-index: 3;
+  padding: 20px;
+}
+
+/* Animated title text */
+.sparkle-text {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #f0f,
+    0 0 20px #f0f,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  animation: glow 1.5s ease-in-out infinite alternate,
+             zoomBounce 4s ease-in-out infinite;
+}
+
+/* Button below welcome text */
+.thank-button {
+  margin-top: 10px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: transform 0.3s;
+}
+
+.thank-button:hover {
+  transform: scale(1.1);
+}
+#playSongBtn {
+  
+  margin: 20px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#playSongBtn:hover {
+  background-color: #e75480;
+  transform: scale(1.05);
+}
+@keyframes zoomOutFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+                                                              
+/* Cake section (hidden initially) */
+.container {
+  display: none;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Section headings */
+h1 {
+  font-size: 2rem;
+  color: #d6336c;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #5c5c5c;
+  margin-bottom: 10px;
+}
+
+/* Cake and knife placement */
+.cake-area {
+  position: relative;
+  max-width: 300px;
+  width: 90vw;
+ /* aspect-ratio: 1/1;  Keeps square ratio */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cakeFadeIn 1s ease forwards;
+}
+
+#cake {
+  position: relative;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  transition: opacity 0.5s ease, transform 0.4s ease;
+  object-fit: contain;
+}
+
+#knife {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  max-width: 80%;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+} 
+#cuttedCake {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: cotain;
+  display: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  animation: cakeFadeIn 1s ease forwards;
+  z-index: 3;
+
+}
+
+
+.celebration-text {
+  position: fixed;
+top:20%;
+  left: 30%;
+  margin-top: 20px;
+  font-size: 2rem;
+  display: none;
+  animation: popIn 1s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+.fireworks {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: transparent;
+  z-index: 1000;
+  animation: sparkle 1.2s ease-out forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    background: radial-gradient(circle, #fff 0%, transparent 20%) repeat;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.celebration-text {
+  display: none;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+  animation: popGlow 1.2s ease forwards;
+  margin-top: 20px;
+}
+
+@keyframes popGlow {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+
+/* Gift Button */
+#nextBtn {
+  position: fixed;
+  display: none;
+  margin-top: 30px;
+ 
+  top: 80%;
+  left: 40%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #d6336c;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+#nextBtn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+#nextBtn:active {
+  transform: scale(0.95);
+}
+#nextBtn:focus {
+  outline: none;
+}
+
+/* musics control*/
+
+/* Animations 
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #f0f;
+  }
+  to {
+    text-shadow: 0 0 10px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
+  }
+}
+
+@keyframes zoomBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cakeSlice {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes cakeSliceReverse {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes knifeSlice {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes knifeSliceReverse {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes cakeFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes knifeFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes cakeFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+@keyframes knifeFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+/* Fade-in on load *
+.cake-fade-in {
+  animation: cakeFadeIn 0.6s ease-out forwards;
+}
+
+.knife-fade-in {
+  animation: knifeFadeIn 0.6s ease-out forwards;
+}
+
+/* Slice animation *
+.cake-cut {
+  animation: cakeSlice 0.4s ease-out forwards;
+}
+
+.knife-cut {
+  animation: knifeSlice 0.4s ease-out forwards;
+}
+
+/* Reverse slice *
+.cake-reset {
+  animation: cakeSliceReverse 0.4s ease-in forwards;
+}
+
+.knife-reset {
+  animation: knifeSliceReverse 0.4s ease-in forwards;
+}
+
+/* Fade-out when hiding *
+.cake-fade-out {
+  animation: cakeFadeOut 0.6s ease-in forwards;
+}
+
+.knife-fade-out {
+  animation: knifeFadeOut 0.6s ease-in forwards;
+}
+  */
+
+/* --- END: Animation Classes --- */

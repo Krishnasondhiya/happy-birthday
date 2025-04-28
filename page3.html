@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise - Page 3</title>
+  <link rel="stylesheet" href="style3.css"/>
+</head>
+<body>
+  <body>
+    <audio id="backgroundMusic"autoplay loop ><source src="music/pal pal.mp3" type="audio/mp3"></audio>
+
+  
+    <button id="musicBtn">🎵</button>
+
+<!-- Video Background -->
+<video autoplay muted loop class="video-background">
+  <source src="video/vidd.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+<!-- Main Content -->
+<div class="container">
+  <h1>Your Gift Awaits!</h1>
+  <p>Tap the gift box to open it! 🎁</p>
+
+  <div class="gift-box" id="giftBox">
+    <img src="images/gift.png" alt="Gift Box Closed" id="giftClosed" />
+    <img src="images/open_gift.png" alt="Gift Box Opened" id="giftOpen" style="display: none;"/>
+  </div>
+
+  <div class="love-letter" id="loveLetter" style="display: none;">
+    <p>My love,</p>
+    <p>Happy Birthday to the most amazing person in my life. You bring so much light and love into my world. I hope this day brings you all the joy you deserve — and I’ll always be by your side, making every moment special.</p>
+    <p>Forever yours,</p>
+    <p><strong>Your Love</strong></p>
+  </div>
+
+  <button id="nextBtn" style="display: none;">Next</button>
+</div>
+
+<div class="photo-side">
+  <img src="images/img13.jpg" class="photo-img1" alt="Photo 1" />
+  <img src="images/img9.jpg" class="photo-img2" alt="Photo 2" />
+  <img src="images/img12.jpg" class="photo-img3" alt="Photo 3" />
+</div>
+
+<!-- JavaScript -->
+<script src="script3.js"></script>
+
+</body>
+</html>

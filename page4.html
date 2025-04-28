@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Yours</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Danciing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Dancing Script', cursive;
+      position: relative;
+      background: url('images/bg10.jpg') center/cover no-repeat fixed; /* 🌟 background image */
+    }
+  
+    /* Background Grid */
+    .background-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+      overflow: hidden;
+      opacity: 0.9; /* 🔥 soft look */
+    }
+  
+    .background-grid img {
+      width: calc(100% / 8); /* 6 images per row */
+      height: calc(100% / 3); /* 6 images per row */
+      object-fit:contain;
+      margin: 5px;
+      border-radius: 10px;
+    }
+    .background-grid img:hover {
+  transform: scale(3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  z-index: 4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Center the image */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  overflow: hidden; ;
+  border-radius: 10px;
+  
+  
+}
+    /* Center Message */
+    .love-message {
+      position: absolute;
+      z-index: 3;
+      font-size: 4rem;
+      color: rgb(238, 68, 201);
+      text-shadow: 0 0 10px #ff6b81, 0 0 20px #ff6b81, 0 0 40px #ff6b81;
+      text-align: center;
+      animation: fadeInBounce 2s ease forwards;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Dancing Script', cursive;
+      opacity:0.8;
+    }
+  
+    @keyframes fadeInBounce {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
+      60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+  
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      opacity: 0.8;
+      animation: floatUp 8s linear infinite;
+      z-index: 2;
+    }
+  
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: rgb(211, 107, 124);
+      border-radius: 50%;
+    }
+  
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+  
+    @keyframes floatUp {
+      0% { bottom: -50px; opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { bottom: 110%; opacity: 0; }
+    }
+    #musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  background-color: #b92a61;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#musicBtn:hover {
+  background-color: #9a3ae9;
+  transform: scale(1.1);
+}
+.playing {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
+  
+
+</head>
+
+<body>
+  <audio id="backgroundMusic"autoplay loop ><source src="music/hawa banke.mp3" type="audio/mp3"></audio>
+
+  <button id="musicBtn">🎵</button>
+
+  <!-- Background Pictures Grid -->
+  <div class="background-grid">
+    <img src="images/img1.jpg" alt="">
+    <img src="images/img13.jpg" alt="">
+    <img src="images/img3.jpg" alt="">
+    <img src="images/img4.jpg" alt="">
+    <img src="images/img5.jpg" alt="">
+    <img src="images/img6.jpg" alt="">
+    <img src="images/img7.jpg" alt="">
+    <img src="images/img8.jpg" alt="">
+    <img src="images/img9.jpg" alt="">
+    <img src="images/img10.jpg" alt="">
+    <img src="images/img11.jpg" alt="">
+    <img src="images/img12.jpg" alt="">
+    <img src="images/img14.jpg" alt="">
+    <img src="images/img15.jpg" alt="">
+    <img src="images/img16.jpg" alt="">
+    <img src="images/img17.jpg" alt="">
+    <img src="images/img18.jpg" alt="">
+    <img src="images/img19.jpg" alt="">
+    <img src="images/img20.jpg" alt="">
+    <img src="images/img21.jpg" alt=""> 
+  </div>
+
+  <!-- Center Message -->
+  <div class="love-message">
+    I Love You❤️ <br>So Much
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="heart" style="left: 20%; bottom: 0;"></div>
+  <div class="heart" style="left: 50%; bottom: 0; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 75%; bottom: 0; animation-delay: 4s;"></div>
+
+</body>
+<script>
+  const music = document.getElementById('backgroundMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  let isPlaying = false;
+
+  musicBtn.addEventListener('click', () => {
+  if (isPlaying) {
+    music.pause();
+    musicBtn.textContent = '🎵'; // Music off symbol
+    musicBtn.classList.remove('playing'); // 🛠️ Remove spin when paused
+  } else {
+    music.play();
+    musicBtn.textContent = '🔊'; // Music on symbol
+    musicBtn.classList.add('playing'); // 🛠️ Add spin when playing
+  }
+  isPlaying = !isPlaying;
+});
+
+</script>
+</html>
