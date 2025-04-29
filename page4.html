@@ -40,28 +40,50 @@
       margin: 5px;
       border-radius: 10px;
     }
-    .background-grid img:hover {
-  transform: scale(3);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-  z-index: 4;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Center the image */
+    #popupOverlay {
   position: fixed;
-  
-  overflow: hidden; ;
-  border-radius: 10px;
-  
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:auto;
+}
+
+#popupContent {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
+
+#popupImage {
+  max-width: 50%;
+  max-height: 50%;
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+ 
+  
     /* Center Message */
     .love-message {
       position: absolute;
       z-index: 3;
-      font-size: 4rem;
-      color: rgb(238, 68, 201);
+      font-size: 3rem;
+      color: pink;
       text-shadow: 0 0 10px #ff6b81, 0 0 20px #ff6b81, 0 0 40px #ff6b81;
       text-align: center;
-      animation: fadeInBounce 2s ease forwards;
+      animation: fadeInBounce 2s ease-in-out alternate infinite;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -80,11 +102,11 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: pink;
+      background-color: rgb(233, 98, 143);
       transform: rotate(45deg);
-      opacity: 0.8;
+      opacity: 1;
       animation: floatUp 8s linear infinite;
-      z-index: 2;
+      z-index: 3;
     }
   
     .heart::before, .heart::after {
@@ -92,7 +114,7 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      background-color: rgb(211, 107, 124);
+      background-color: rgb(233, 98, 143);
       border-radius: 50%;
     }
   
@@ -147,7 +169,7 @@
   <div class="background-grid">
     <img src="images/img1.jpg" alt="">
     <img src="images/img13.jpg" alt="">
-    <img src="images/img22.jpg" alt="">
+    <img src="images/img2.jpg" alt="">
     <img src="images/img3.jpg" alt="">
     <img src="images/img4.jpg" alt="">
     <img src="images/img5.jpg" alt="">
@@ -155,8 +177,8 @@
     <img src="images/img7.jpg" alt="">
     <img src="images/img8.jpg" alt="">
     <img src="images/img9.jpg" alt="">
-    <img src="images/img10.jpg" alt="">
-    <img src="images/img11.jpg" alt="">
+    <img src="images/img11.jpg" alt=""> 
+    <img src="images/img25.jpg" alt="">
     <img src="images/img12.jpg" alt="">
     <img src="images/img14.jpg" alt="">
     <img src="images/img15.jpg" alt="">
@@ -165,7 +187,8 @@
     <img src="images/img18.jpg" alt="">
     <img src="images/img19.jpg" alt="">
     <img src="images/img20.jpg" alt="">
-    <img src="images/img21.jpg" alt=""> 
+    <img src="images/img26.jpg" alt=""> 
+   
   </div>
 
   <!-- Center Message -->
@@ -178,8 +201,35 @@
   <div class="heart" style="left: 50%; bottom: 0; animation-delay: 2s;"></div>
   <div class="heart" style="left: 75%; bottom: 0; animation-delay: 4s;"></div>
 
+  <!-- Image Popup Overlay -->
+<div id="popupOverlay" style="display:none;">
+  <div id="popupContent">
+    <img id="popupImage" src="" alt="Enlarged Image">
+  </div>
+</div>
+
 </body>
 <script>
+  // Handle image click popup
+  function showPopup(imgSrc) {
+  const popup = document.getElementById('popupOverlay');
+  const popupImg = document.getElementById('popupImage');
+  popupImg.src = imgSrc;
+  popup.style.display = 'flex';
+}
+
+// Attach both click and hover
+document.querySelectorAll('.background-grid img').forEach(img => {
+  img.addEventListener('click', () => showPopup(img.src));
+  //img.addEventListener('mouseenter', () => showPopup(img.src)); // optional
+});
+
+// Close popup when clicking anywhere inside the overlay
+document.getElementById('popupOverlay').addEventListener('click', () => {
+  document.getElementById('popupOverlay').style.display = 'none';
+});
+
+
   const music = document.getElementById('backgroundMusic');
   const musicBtn = document.getElementById('musicBtn');
   let isPlaying = false;
